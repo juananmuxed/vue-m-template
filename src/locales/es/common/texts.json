@@ -1,0 +1,6 @@
+{
+  "welcome01": "Este sitio web te permite editar o crear para la Template API. Podrás <b>crear, editar o eliminar</b>.",
+  "welcome02": "Eres más que bienvenido a usar esta web para disfrutar.",
+  "news01": "Lanzada versión 1.0.0",
+  "listAllChanges": "Listado completo de <a href=\"{url}\" target=\"_blank\">todos los cambios</a>"
+}
