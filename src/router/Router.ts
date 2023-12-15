@@ -4,8 +4,10 @@ import {
   createRouter,
   createWebHistory,
 } from 'vue-router';
+
 import { MenuRoutes } from './MenuRoutes';
 import { useTitle } from 'src/composables/UseTitle';
+import { useUserStore } from 'src/stores/UseUserStore';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -16,6 +18,14 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
+    path: '/login',
+    name: 'login',
+    meta: {
+      titleTag: 'menu.login',
+    },
+    component: () => import('src/views/LoginView.vue'),
+  },
+  {
     path: '/:pathMatch(.*)*',
     redirect: '/',
   },
@@ -23,7 +33,7 @@ const routes: RouteRecordRaw[] = [
 
 export const router = createRouter({
   history: createWebHistory(),
-  routes: routes
+  routes,
 });
 
 export const installRouter = (app: App) => {
@@ -31,13 +41,23 @@ export const installRouter = (app: App) => {
 };
 
 let titleRouteTimeout: NodeJS.Timeout;
-const title = useTitle();
 
 router.beforeEach((to, from, next) => {
+  const title = useTitle();
+  const user = useUserStore();
+
   titleRouteTimeout && clearTimeout(titleRouteTimeout);
   titleRouteTimeout = setTimeout(() => {
     title.setTitle(to);
   }, 200);
 
-  next();
-})
+  const publicPages = ['login'];
+  const authRequired = !publicPages.includes(to.name?.toString() || '');
+
+  if (!authRequired && user.validToken) next({ name: 'home' });
+
+  if (authRequired && !user.validToken) {
+    next({ name: 'login' });
+  } else if (!user.isValidRole(to.meta.roles)) next({ name: 'home' });
+  else next();
+});
