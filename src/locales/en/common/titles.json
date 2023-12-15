@@ -1,5 +1,5 @@
 {
-  "apiTemplate": "API Template",
+  "webTitle": "Admin API Template",
   "newItem": "Create {item}",
   "editItem": "Edit {item}",
   "deleteItem": "Delete {item}",

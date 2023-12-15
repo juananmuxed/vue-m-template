@@ -3,7 +3,7 @@
     <QCard class="absolute-center shadow-18">
       <QCardSection class="bg-teal-2">
         <div class="text-h5">
-          {{ $t("common.titles.adminForClash") }}
+          {{ $t("common.titles.webTitle") }}
         </div>
       </QCardSection>
       <QForm @submit.prevent="user.login">
@@ -26,7 +26,7 @@
               :label="$t('common.labels.password')"
               :rules="[rules.isRequired]"
             >
-              <template v-slot:append>
+              <template #append>
                 <QBtn
                   round
                   dense
@@ -49,7 +49,7 @@
             padding="sm xl"
             :loading="user.isLoading"
           >
-            <template v-slot:loading>
+            <template #loading>
               <QSpinnerGears />
             </template>
           </QBtn>
@@ -60,8 +60,8 @@
 </template>
 
 <script setup lang="ts">
-import { useUserStore } from "src/stores/UseUserStore";
-import { useRules } from "src/composables/UseRules";
+import { useUserStore } from 'src/stores/UseUserStore';
+import { useRules } from 'src/composables/UseRules';
 
 const user = useUserStore();
 const rules = useRules();
