@@ -27,6 +27,7 @@
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-vue": "^9.17.0",
+    "rollup-plugin-sass-migrator": "^1.0.5",
     "sass": "^1.69.4",
     "typescript": "^5.2.2",
     "unplugin-auto-import": "^0.16.6",
