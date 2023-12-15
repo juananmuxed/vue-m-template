@@ -1,6 +1,7 @@
-import { t } from "src/plugins/I18n";
-import { router } from "src/router/Router";
-import { RouteLocationNormalized } from "vue-router";
+import { RouteLocationNormalized } from 'vue-router';
+
+import { t } from 'src/plugins/I18n';
+import { router } from 'src/router/Router';
 
 export const useTitle = () => {
   const setTitle = (to?: RouteLocationNormalized) => {
@@ -8,9 +9,9 @@ export const useTitle = () => {
     const titleRoute = _to.meta?.titleTag ? t(`${_to.meta?.titleTag}`) : '-';
     const id = _to.params.id?.toString() ? `${_to.params.id} ` : '';
     document.title = `${titleRoute} ${id}`.trim();
-  }
+  };
 
   return {
-    setTitle
-  }
-}
+    setTitle,
+  };
+};
