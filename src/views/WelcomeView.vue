@@ -9,11 +9,6 @@
       <ul>
         <li>{{ $t('common.texts.news01') }}</li>
       </ul>
-      <p>
-        {{ $t('common.texts.listAllChanges', {
-          url: 'https://github.com/juananmuxed/clash-of-spears-admin/blob/main/CHANGELOG.md',
-        }) }}
-      </p>
     </QCardSection>
   </QCard>
 </template>
