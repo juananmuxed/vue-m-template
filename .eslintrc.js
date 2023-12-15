@@ -8,7 +8,6 @@ module.exports = {
   extends: [
     'airbnb-base',
     'plugin:vue/vue3-recommended',
-    'plugin:tailwindcss/recommended',
     '@vue/typescript/recommended',
     '@vue/eslint-config-typescript',
     '@vue/eslint-config-typescript/recommended',
@@ -17,7 +16,7 @@ module.exports = {
     ecmaVersion: 2021,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'vue', 'tailwindcss'],
+  plugins: ['@typescript-eslint', 'vue'],
   rules: {
     indent: 'off',
     'linebreak-style': 'off',
