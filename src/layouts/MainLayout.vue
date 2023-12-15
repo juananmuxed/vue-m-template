@@ -5,7 +5,7 @@
         <QBtn flat round icon="fas fa-bars" class="q-mr-sm" @click="switchDrawer" />
         <QToolbarTitle>
           <RouterLink :to="{ name: 'home'}">
-            {{ $t("common.titles.adminForClash") }}
+            {{ $t("common.titles.webTitle") }}
           </RouterLink>
         </QToolbarTitle>
         <QBtn icon="fas fa-user" round flat>

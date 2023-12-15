@@ -35,7 +35,7 @@ export const columns = [
   {
     name: 'roleId',
     label: t('common.labels.role'),
-    field: 'roleId',
+    field: (row) => row.role.name,
     sortable: true,
     align: 'left',
   },
@@ -63,6 +63,15 @@ export const userForm: FormItem[] = [
       rules: [rules.isRequired, rules.isEmail],
     },
     queryName: 'email',
+  },
+  {
+    type: 'input',
+    fieldProps: {
+      label: t('common.labels.password'),
+      rules: [rules.isRequired],
+      type: 'password',
+    },
+    queryName: 'password',
   },
   {
     type: 'input',
