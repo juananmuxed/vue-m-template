@@ -1,4 +1,4 @@
 export const LOCAL_STORAGE = {
   JWT: 'JWT_User',
-  LANG: 'lang'
+  LANG: 'lang',
 } as const;
